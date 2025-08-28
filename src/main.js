@@ -1,4 +1,4 @@
-class Car {
+export default class Car {
   position = 0;
   name;
 

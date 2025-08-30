@@ -1,9 +1,10 @@
-console.log('Car');
 
-class Car {
+export default class Car {
+  position = 0;
+  name;
+
   constructor(name) {
     this.name = name;
-    this.position = 0;
   }
 
   moveForward() {

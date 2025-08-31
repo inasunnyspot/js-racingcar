@@ -1,11 +1,11 @@
-export const POSITION_ERR_MSG = `position에 직접 값을 할당할 수 없습니다.`;
+import { ERROR_MESSAGE } from './constants/message.js';
 
 export default class Car {
   #position = 0;
   #name;
 
   constructor(name) {
-    this.#name = name;
+    this.#name = this.#validateCarName(name);
   }
 
   get name() {
@@ -17,7 +17,13 @@ export default class Car {
   }
 
   set position(position) {
-    throw new Error(POSITION_ERR_MSG);
+    throw new Error(ERROR_MESSAGE.POSITION_INPUT);
+  }
+  #validateCarName(name) {
+    if (!name || name.trim() === '' || name.length > 5) {
+      throw new Error(ERROR_MESSAGE.NAME_LENGTH);
+    }
+    return name;
   }
   moveForward() {
     this.#position += 1;

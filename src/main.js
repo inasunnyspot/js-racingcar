@@ -1,13 +1,15 @@
-import Car from './Car.js';
+import RacingGame from './RacingGame.js';
 import readLineAsync from './readLineAsync.js';
 
 // 입출력 예시
 async function play() {
-  const name = await readLineAsync('경주할 자동차 이름을 입력하세요: ');
-  const racingCar = new Car(name);
-  console.log(racingCar.name);
+  try {
+    const name = await readLineAsync('경주할 자동차 이름을 입력하세요: ');
+    const racingCar = new RacingGame(name);
 
-  racingCar.moveForward();
-  racingCar.printResult(1);
+    racingCar.startGame();
+  } catch (error) {
+    console.log(error);
+  }
 }
 play();

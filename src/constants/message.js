@@ -1,5 +1,6 @@
 export const CONFIG = {
   MAX_NAME_LENGTH: 5,
+  RACING_ROUNDS: 5,
 };
 
 export const ERROR_MESSAGE = {

@@ -19,18 +19,15 @@ export default class Car {
   set position(position) {
     throw new Error(ERROR_MESSAGE.POSITION_INPUT);
   }
+
   #validateCarName(name) {
-    if (!name || name.trim() === '' || name.length > 5) {
+    if (!name || name.trim() === '' || name.trim().length > 5) {
       throw new Error(ERROR_MESSAGE.NAME_LENGTH);
     }
-    return name;
-  }
-  moveForward() {
-    this.#position += 1;
+    return name.trim();
   }
 
-  printResult(count) {
-    const speed = new Array(count).fill('-').join('');
-    console.log(`${this.#name}: ${speed}`);
+  moveForward() {
+    this.#position += 1;
   }
 }

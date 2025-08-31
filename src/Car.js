@@ -22,4 +22,9 @@ export default class Car {
   moveForward() {
     this.#position += 1;
   }
+
+  printResult(count) {
+    const speed = new Array(count).fill('-').join('');
+    console.log(`${this.#name}: ${speed}`);
+  }
 }

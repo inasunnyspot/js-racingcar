@@ -1,4 +1,4 @@
-import Car, { POSITION_ERR_MSG } from '../src/main';
+import Car, { POSITION_ERR_MSG } from '../src/Car';
 
 describe('Cart Raging Game', () => {
   let car;
